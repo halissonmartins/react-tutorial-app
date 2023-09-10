@@ -1,0 +1,1 @@
+This project is a exemple to deploy into AWS using Github Actions.
