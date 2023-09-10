@@ -10,7 +10,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - react-ec2-github-actions:./react-ec2-github-actions/build/ # build files will be added at this directory !!!
+      - react-ec2-github-actions:./react-ec2-github-actions/build/ # build files will be added at this directory
 
   nginx:
     build:
