@@ -1,0 +1,20 @@
+version: '3'
+services:
+  react-ec2-github-actions:
+    container_name: 'react-ec2-github-actions'
+    image: '${WEBSITE_IMAGE}'
+    ports:
+      - '3000:3000'
+    volumes:
+      - react-ec2-github-actions:/react-ec2-github-actions/build/ # build files will be added at this directory !!!
+
+  nginx:
+    container_name: 'nginx'
+    image: '${NGINX_IMAGE}'
+    ports:
+      - '80:80'
+    volumes:
+      - react-ec2-github-actions:/usr/share/nginx/html/react-ec2-github-actions # Copy React App's build files to the Nginx directory
+
+volumes:
+  react-ec2-github-actions:
